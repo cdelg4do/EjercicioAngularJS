@@ -1,0 +1,46 @@
+
+<!-- Vista del componente que muestra la lista de productos -->
+<!------------------------------------------------------------>
+
+<!-- Barra de navegación -->
+<div class="row">
+    <div class="twelve columns">
+        <nav class="barra-herramientas">
+
+            <!-- Formulario de búsqueda de productos -->
+            <product-searchbar on-search-btn-click="$ctrl.searchProducts(searchData)"></product-searchbar>
+
+        </nav>
+    </div>
+</div>
+
+<div class="row">
+    <div class="twelve columns">
+
+        <!-- Texto resumen de la búsqueda -->
+        <h5>{{ $ctrl.summaryText }}</h5>
+
+        <!-- Lista de productos -->
+        <table class="u-full-width">
+            <tbody>
+            <tr ng-repeat="product in $ctrl.showingProducts">
+
+                <td>
+                    <a ng-link="[ 'ProductInfo', { id: product.id } ]">
+                        <img
+                            ng-src="{{ $ctrl.getProductImageUrl(product.photos[0]) }}"
+                            height="130">
+                    </a>
+                </td>
+
+                <td>
+                    <div><a ng-link="[ 'ProductInfo', { id: product.id } ]"><h5><b>{{ product.name }}</b></h5></a></div>
+                    <div><h6>Precio: {{ product.price }} €</h6></div>
+                    <div>De: {{ product.seller.nick }}</div>
+                    <div>Categoría: {{ product.category.name }}</div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

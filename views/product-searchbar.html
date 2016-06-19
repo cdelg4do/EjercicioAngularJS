@@ -1,0 +1,37 @@
+
+<!-- Vista de la directiva para la barra de búsqueda -->
+<!----------------------------------------------------->
+<div class="row">
+    <div class="four columns">
+        <label for="selector-categorias" texto-busqueda">Categoría</label>
+        <!--Selector de categoría -->
+        <select
+                id="selector-categorias"
+                ng-model="searchData.category"
+                ng-options="category.id as category.name for category in categoryOptions"
+                class="u-full-width">
+        </select>
+    </div>
+    <div class="six columns">
+        <label for="texto-busqueda">Búsqueda de productos</label>
+        <!-- Texto de búsqueda -->
+        <input
+                id="texto-busqueda"
+                type="text"
+                placeholder="Introduce al menos 3 caracteres"
+                class="u-full-width"
+                ng-model="searchData.text">
+    </div>
+    <div class="two columns">
+        <div></div>
+        <label>&nbsp;</label>
+        <!-- Botón para guardar receta -->
+        <button
+                id="boton-buscar"
+                ng-click="searchBtnClicked()"
+                ng-disabled="!goodToGo()"
+                class="u-full-width button-primary">
+            Buscar
+        </button>
+    </div>
+</div>

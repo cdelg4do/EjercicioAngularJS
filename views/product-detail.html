@@ -1,0 +1,36 @@
+
+<!-- Vista de la ficha de un producto almacenado en el sistema -->
+<!--------------------------------------------------------------->
+<div class="row">
+    <div class="twelve columns">
+        <table class="u-full-width">
+            <tbody>
+            <tr>
+
+                <td>
+                    <img
+                        ng-src="{{ $ctrl.getProductImageUrl($ctrl.product.photos[0]) }}"
+                        height="240">
+                    </a>
+                </td>
+
+                <td>
+                    <div><h4><b>{{ $ctrl.product.name }}</b></h4></div>
+                    <div><h5>Precio: {{ $ctrl.product.price }} €</h5></div>
+                    <div>Publicado el {{ $ctrl.product.published_date }} por <b>{{ $ctrl.product.seller.nick }}</b></div>
+                    <div>Estado: {{ $ctrl.product.state }}</div>
+                    <div>Categoría: {{ $ctrl.product.category.name }}</div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div>
+                        <h6><b>Descripción del producto:</b></h6>
+                        <p ng-bind-html="$ctrl.validateHtml($ctrl.product.description)"></p>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Indicación de la ruta base a partir de la cual se contruye el Single Page Application -->
+        <base href="/">
+
+        <meta charset="UTF-8">
+        <title>Whatapop</title>
+
+        <!-- Hojas de estilos (Skeleton y específica de la aplicación -->
+        <link rel="stylesheet" href="node_modules/skeleton-css/css/normalize.css">
+        <link rel="stylesheet" href="node_modules/skeleton-css/css/skeleton.css">
+        <link rel="stylesheet" href="styles/whatapop.css">
+
+        <!-- AngularJS y Router para Single Page Application -->
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/@angular/router/angular1/angular_1_router.js"></script>
+
+        <!-- Configuración del módulo -->
+        <script src="scripts/app.js"></script>
+
+        <!-- Componentes usados en la aplicación -->
+        <script src="scripts/components/root-component.js"></script>
+        <script src="scripts/components/listed-products.js"></script>
+        <script src="scripts/components/product-detail.js"></script>
+
+        <!-- Filtros usados en la aplicación -->
+        <script src="scripts/filters/product-filter.js"></script>
+
+        <!-- Servicios usados en la aplicación -->
+        <script src="scripts/services/category-service.js"></script>
+        <script src="scripts/services/product-service.js"></script>
+        <script src="scripts/services/user-service.js"></script>
+
+        <!-- Directivas usadas en la aplicación -->
+        <script src="scripts/directives/product-searchbar.js"></script>
+
+        <!-- Values usados en la aplicación -->
+        <script src="scripts/values/settings.js"></script>
+
+    </head>
+
+    <body ng-app="whatapop">
+
+        <!-- Componente raíz de la SPA -->
+        <root-component></root-component>
+
+    </body>
+
+</html>
