@@ -1,48 +1,55 @@
-# Práctica Fundamentos de AngularJS de Carlos Delgado Andrés
+# WHATAPOP, a simple Angular front end
 
-**Whatapop** es un prototipo de aplicación web similar a Walapop realizada en Angular 1.5.
+This is a small example of a front end for an online shop where users publish advertisements to buy/sell articles, made in Angular 1.5.7. To test the application it uses lite-server as web server and SparREST to provide support for API Rest requests.
 
-Se trata de una Single Page Application con dos páginas, una para buscar y mostrar un listado de productos, y otra para mostrar la información de un producto en detalle.
-
-La práctica se ha implementado utilizando la **Opción 1** (usando **node-sparrest** como backend).
+The project consists in a Single Page Application (SPA) with two main views: one to perform searchs and show an article list, and other to show the detail of an specific article.
 
 .
-### Página de búsqueda y listado de productos:
-Esta es la página por defecto de la aplicación y puede accederse a través del enpoint **/products**.
+### Search and list results page:
 
-Esta página cuenta con una barra de búsqueda consistente en:
-* **Selector de categorías**: una lista desplegable que permite al usuario seleccionar una categoría concreta, o bien ampliar la búsqueda a **todas** las categorías (que es la opción por defecto).
-* **Formulario de búsqueda**: un campo de texto que permite al usuario introducir la(s) palabra(s) clave de su búsqueda de productos.
-* **Botón de búsqueda**: para realizar la consulta al servidor de acuerdo con los criterios indicados por el usuario.
+This is the application default view, and it can be accessed through the endpoint **/products**. This page has a search bar with the following elements:
 
-Si por alguna razón no es posible obtener las categorías del servidor, la opción de **Todas las categorías** siempre estará disponible.
+* **Category selector**: a drop-down list where the user can choose a specific category to search by. The default option is "todas", which allows the search to be extended to all existing categories.
+* **Search box**: a text box where the user can enter the key words for his search.
+* **Search button**: to launch the search request, it only becomes enabled when the user enters three or more characters in the search box.
 
-La búsqueda por texto se realiza buscando coincidencias en el nombre o en la descripción de los productos, sin distinguir mayúsculas ni minúsculas. Tampoco se tienen en cuenta para esta búsqueda las etiquetas Html de la descripción del producto.
+The text search is performed by searching matches in the name or description of the products, regardless the capital letters or the HTML tags in the description.
 
-El botón de búsqueda se inhabilita mientras no se introduzca un texto de al menos 3 caracteres (sin contar espacios).
-
-Si la búsqueda arroja coincidencias, se muestra un listado de las mismas que incluye:
-* La primera imágen del producto (en caso de que tuviese más de una).
-* Nombre del producto
-* Precio
-* Autor del anuncio
-* Categoría a la que pertenece
+In case the search finds some match, a list of products with the following data is shown:
+* First small-size image of the product (in case there is more than one).
+* Product name
+* Product price (in euros)
+* Product owner
+* Product category
 
 .
-### Página de detalle del producto:
-Se accede a esta página pulsando sobre la imágen del producto o sobre su nombre, en el listado de búsqueda de productos.
+### Product detail page:
+This page is accessed by clicking on a product in the result list, or through the endpoint **/product/<PROD_ID>** where <PROD_ID> is the id of the product to show.
 
-También se puede acceder a través del endpoint **/product/** especificando el id del producto a mostrar.
+If the request to get the product data fails, or the entered product does not exist, a warning message is shown to the user before redirecting him to the search page.
 
-Si la consulta al servidor para obtener los datos del producto falló, o si el producto indicado no existe, se mostrará un mensaje de aviso al usuario y se le redirigirá a la `´agina de búsqueda.
+In case the product data are successfully retrieved, the following data are shown on screen:
+* First big-sized image of the product (in case there is more than one)
+* Product name
+* Product price (in euros)
+* Publication date and product owner
+* Product status: En venta (for sale), or vendido (sold)
+* Product category
+* Product description (including HTML tags, if any)
 
-En caso de obtener correctamente los datos del producto, se mostrarán en pantalla:
-* Foto en grande del producto (si tuviese varias, la primera)
-* Nombre del producto
-* Precio del producto, en Euros
-* Fecha y autor de la publicación
-* Estado del producto (si está en venta o si ya está vendido)
-* Categoría a la que pertenece
-* Descripción del producto (incorporando etiquetas html, si las tuviese)
+It is possible to go back to the search page from here at any moment, by clicking the "Back" button of the browser or by clicking on the page header.
 
-Es posible regresar a la página de búsqueda desde esta página en cualquier momento pulsando el botón "ir atrás" del navegador o pulsando sobre el nombre del sitio en la cabecera de la página en la parte superior.
+.
+### Screenshots:
+
+<kbd>
+	<img alt="screenshot 1" src="https://cloud.githubusercontent.com/assets/18370149/25541293/68c64366-2c4e-11e7-9415-14eb636b1ee5.jpg">
+</kbd>
+<br>
+<kbd>
+	<img alt="screenshot 2" src="https://cloud.githubusercontent.com/assets/18370149/25541299/6cbea26a-2c4e-11e7-84c0-3c42aecb1615.jpg">
+</kbd>
+<br>
+<kbd>
+	<img alt="screenshot 3" src="https://cloud.githubusercontent.com/assets/18370149/25541304/70980228-2c4e-11e7-8e28-5898a5f4f670.jpg">
+</kbd>
