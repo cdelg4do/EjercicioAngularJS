@@ -45,11 +45,11 @@ It is possible to go back to the search page from here at any moment, by clickin
 <kbd>
 	<img alt="screenshot 1" src="https://cloud.githubusercontent.com/assets/18370149/25541293/68c64366-2c4e-11e7-9415-14eb636b1ee5.jpg">
 </kbd>
-<br>
+&nbsp;
 <kbd>
 	<img alt="screenshot 2" src="https://cloud.githubusercontent.com/assets/18370149/25541299/6cbea26a-2c4e-11e7-84c0-3c42aecb1615.jpg">
 </kbd>
-<br>
+&nbsp;
 <kbd>
 	<img alt="screenshot 3" src="https://cloud.githubusercontent.com/assets/18370149/25541304/70980228-2c4e-11e7-8e28-5898a5f4f670.jpg">
 </kbd>
